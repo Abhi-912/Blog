@@ -1,22 +1,6 @@
 # Blog App
 
-#### A simple Restful blogging web app built using NodeJS, ExpressJS and MongoDb. Authenticated and authorization functions with passport.js.
-
-### Model &rarr; [MongoDB][18]
-
-The NoSQL database [MongoDB][18] is used for data storage, with [Mongoose][19] 
-as a native JavaScript object document mapper (ODM). Schemas in the `/models` 
-directory model the database as well as define validation functions. In 
-production, the database is hosted by [MongoDB Atlas][17]
-
-### View &rarr; [Express][25], [EJS][23]
-
-Server-side routing is managed by the [Express.js][25] web framework.
-
-Views are preprocessed with [Embedded JavaScript][23] (EJS) templates (written 
-in HTML with embedded tags for JS) from the `/views` directory 
-or served statically using the [`express.static()`][24] middleware from the
-`/public` directory.
+### A simple Restful blogging web app built using NodeJS, ExpressJS and MongoDb. Authenticated and authorization functions with passport.js.
 
 ## Features 
 
@@ -35,6 +19,7 @@ or served statically using the [`express.static()`][24] middleware from the
 - PUT /posts/:id - To update specific post with unique Id (when user is authenticated andauthorized only)
 - Delete /posts/:id - To delete specific post with unique Id (when user is authenticated andauthorized only)
 
+### Visit the site-
 [Blog App ](https://blog-gers.herokuapp.com/)
 
 # How to run
