@@ -41,7 +41,7 @@ app.use(require('express-session')({
   cookie: { maxAge: 600000 }
 }))
 
-app.use(cookieParser(process.env.SECRET_KEY));
+app.use(cookieParser('Secret Key'));
 app.use(flash());
 
 app.use(passport.initialize())
