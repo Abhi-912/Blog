@@ -47,7 +47,7 @@ router.get("/login",(req,res)=>{
 router.post("/login",passport.authenticate("local",{
     successRedirect:"/blogs",
     failureRedirect:"/login",
-    failureFlash : { type: 'info', message: 'Invalid username or password.' }
+    failureFlash : { type: 'info', message: 'Invalid username or password' }
 })
 )
 
