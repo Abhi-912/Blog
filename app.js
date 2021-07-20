@@ -35,7 +35,7 @@ const userRoutes = require("./routes/user");
 
 //------------PASSPORT CONFIGURATION-----------
 app.use(require('express-session')({
-  secret: process.env.SECRET_KEY,
+  secret: 'My Secret Key',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 600000 }
