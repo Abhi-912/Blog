@@ -1,8 +1,14 @@
 
 <%- include("partials/header")%>
 
+
 <div class="ui main text container segment">
     <div class="ui huge header">Sign Up</div>
+    <div style="color: red;">
+        <% if(messages.info) {%>
+            <%- messages.info %>
+        <% } %>
+       </div>
     <form class="ui form" action="/register" method="post">
         <div class="field">
             <label for="">Username</label>

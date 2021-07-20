@@ -1,6 +1,5 @@
 <%- include ("./partials/header") %>
 
-
 <div class="ui main text container">
 	<div class="ui huge header">Feed</div>
 	<div class="ui top attached segment">
@@ -35,7 +34,13 @@
 
 		</div> <!-- divided items -->
 	</div> <!-- top attached segment -->
+	<div style="color: rgb(8, 150, 8);">
+		<% if(messages.success) {%>
+			<%- messages.success %>
+		<% } %>
+	   </div>
 </div> <!-- main text container -->
+
 
 
 <%- include ("./partials/footer") %>
