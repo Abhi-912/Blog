@@ -32,6 +32,7 @@ app.use(methodOverride("_method"))
 //------------ROUTERS------------------------
 const postRoutes = require("./routes/blog");
 const userRoutes = require("./routes/user");
+const profileRoutes = require("./routes/profile")
 
 //------------PASSPORT CONFIGURATION-----------
 app.use(require('express-session')({
@@ -65,6 +66,7 @@ app.get("/", (req, res) => {
 
 app.use("/blogs", postRoutes);
 app.use("/", userRoutes);
+app.use("/", profileRoutes);
 
 
 app.listen(process.env.PORT || 4001, () => {

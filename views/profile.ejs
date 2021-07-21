@@ -1,22 +1,25 @@
 <%- include("partials/header")%>
 
 <div class="ui main text container segment">
-    <div class="ui huge header">New Blog</div>
-    <form class="ui form" action="/blogs" method="post">
-        <div class="field">
-            <label for="">Title</label>
-            <input type="text" name="blog[title]" placeholder="title" required>
+    <div class="ui huge header">Profile</div>
+    <div class="ui divided items">
+        <div class="item">
+            <div>
+            <p style="font-weight: 600;">Username- &nbsp; <%= currentUser.username %></p>
+            <p style="font-weight: 600;">Name- &nbsp; <%= currentUser.name %></p>
+            </div>
         </div>
-        <div class="field">
-            <label for="">Image</label>
-            <input type="text" name="blog[image]" placeholder="image" required>
+        <div class="item">
+            <h2 style="font-weight: 600;">My Blogs</h2>
         </div>
-        <div class="field">
-            <label for="">Blog Content</label>
-            <textarea name="blog[body]" id="" cols="30" rows="10"required></textarea>
+    <% blogs.forEach(function(blog) { %>
+        <%if(currentUser && blog.author.id.equals(currentUser._id)){%>
+        <div class="item">
+            <a href="/blogs/<%= blog._id %>"><%- blog.title %></a>
         </div>
-        <input class="ui violet big basic button" type="submit">
-    </form>
+        <%}%>
+        <% }) %>
+    </div>
 </div>
 
 <%- include("partials/footer")%>

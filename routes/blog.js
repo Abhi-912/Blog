@@ -23,11 +23,12 @@ router.get("/new",middleware.isLoggedIn,(req,res)=>{
 //create route
 router.post("/",middleware.isLoggedIn,(req,res)=>{
     //create blog
-    var author={
+    const author={
         id: req.user._id,
-        username: req.user.username
+        username: req.user.username,
+        name: req.user.name
     }
-    var newBlog = {title: req.body.blog.title,image: req.body.blog.image,body: req.body.blog.body,author:author}
+    const newBlog = {title: req.body.blog.title,image: req.body.blog.image,body: req.body.blog.body, author:author}
     //console.log(req.body.blog.body)
     console.log(newBlog)
     Blog.create(newBlog,(err,blog)=>{

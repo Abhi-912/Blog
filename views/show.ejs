@@ -6,12 +6,12 @@
         <div class="item">
             <img class="ui centered rounded image" src="<%= blog.image%>" alt="">
             <div class="content">
-                <span><%= blog.created.toDateString() %></span>
-            </div>
+                <span style="font-weight: 800"><%= blog.created.toDateString() %></span>
+            </div><br>
             <div class="description">
-                <p><%- blog.body%></p>
-               <p> <em>Submitted By <%= blog.author.username %></em></p>
-            </div>
+                <p style="white-space: pre-line"><%- blog.body%></p>
+               <p style="font-weight: 600"> <em>Submitted By <%= blog.author.username %></em></p>
+            </div><br>
             <%if(currentUser && blog.author.id.equals(currentUser._id)){%>
             <a class="ui orange basic button" href="/blogs/<%= blog._id%>/edit">Edit</a>
             <form id="delete" action="/blogs/<%= blog._id%>?_method=DELETE" method="post">
