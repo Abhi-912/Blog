@@ -10,7 +10,7 @@
             </div><br>
             <div class="description">
                 <p style="white-space: pre-line"><%- blog.body%></p>
-               <p style="font-weight: 600"> <em>Submitted By <%= blog.author.username %></em></p>
+               <p style="font-weight: 600" href="/stranger"> <em>Submitted By <%= blog.author.username %></em></p>
             </div><br>
             <%if(currentUser && blog.author.id.equals(currentUser._id)){%>
             <a class="ui orange basic button" href="/blogs/<%= blog._id%>/edit">Edit</a>

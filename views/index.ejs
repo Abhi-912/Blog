@@ -1,11 +1,18 @@
 <%- include ("./partials/header") %>
 
 <div class="ui main text container">
-	<div class="ui huge header">Feed</div>
 	<div class="ui top attached segment">
 		<div class="ui divided items">
+			<% if(!currentUser) { %>
+				<h2>Blog Site</h2>
+				<a href="/login" class="item">Login</a>
+			   <a href="/register" class="item">Sign Up</a>
+			<% } %>
 
+            <% if(currentUser) {%>
+			<div class="ui huge header">Feed</div>
 			<% blogs.forEach(function(blog) { %>
+				<%if(blog.author.id.equals(currentUser._id)){%>
 				<div class="item">
 					<div class="image">
 						<img src="<%= blog.image %>" />
@@ -29,8 +36,9 @@
 						</div> <!-- extra -->
 					</div> <!-- content -->
 				</div> <!-- item -->
-			<% }); %>
-
+				<% } %>
+				<% }); %>
+				<% } %>
 		</div> <!-- divided items -->
 	</div> <!-- top attached segment -->
 	<div style="color: rgb(8, 150, 8);">
