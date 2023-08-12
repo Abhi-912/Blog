@@ -18,10 +18,7 @@
 - GET /posts/:id - To get a post with specific id
 - PUT /posts/:id - To update specific post with unique Id (when user is authenticated andauthorized only)
 - Delete /posts/:id - To delete specific post with unique Id (when user is authenticated andauthorized only)
-
-### Visit the site-
-[Blog App ](https://blog-gers.herokuapp.com/)
-
+- 
 # How to run
 
 - Git clone repository
